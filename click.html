@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Click Here Box</title>
+	<style>
+		#box {
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			color: white;
+			text-align: center;
+			line-height: 100px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" onclick="moveBox()">Click Here</div>
+	
+	<script>
+		function moveBox() {
+			var box = document.getElementById("box");
+			var screenWidth = window.innerWidth;
+			var screenHeight = window.innerHeight;
+			var randomX = Math.floor(Math.random() * (screenWidth - 100));
+			var randomY = Math.floor(Math.random() * (screenHeight - 100));
+			box.style.left = randomX + "px";
+			box.style.top = randomY + "px";
+		}
+	</script>
+</body>
+</html>
